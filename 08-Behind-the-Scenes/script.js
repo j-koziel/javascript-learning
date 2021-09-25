@@ -2,7 +2,7 @@
 /**
  * Scoping in practice
  */
-/*
+
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
   function printAge() {
@@ -38,12 +38,12 @@ const firstName = 'Jonas';
 calcAge(1991);
 // console.log(age);
 // printAge();
-*/
+
 /**
  * Hoisting and TDZ in practice
  */
-/*
- // Variables
+
+// Variables
 console.log(me);
 // console.log(job);
 // console.log(year);
@@ -85,13 +85,12 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.z);
 console.log(y === window.z);
-*/
 
 /**
  * this Keyword in pradctice
  */
-/*
- // console.log(this);
+
+// console.log(this);
 
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
@@ -123,7 +122,6 @@ matilda.calcAge();
 
 const f = jonas.calcAge;
 f();
-
 
 // var firstName = 'Matilda';
 
@@ -172,11 +170,11 @@ var addArrow = (a, b) => {
 };
 
 addArrow(2, 5, 8);
-*/
+
 /**
  * Primitives vs Objects
  */
-/*
+
 let age = 30;
 let oldAge = age;
 age = 31;
@@ -192,7 +190,7 @@ const friend = me;
 friend.age = 27;
 console.log('Friend:', friend);
 console.log('Me:', me);
-*/
+
 /**
  * Primitives vs Objects in practice
  */

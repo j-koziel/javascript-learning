@@ -12,7 +12,7 @@
 /**
  * Using Google, StackOverflow and MDN
  */
-/*
+
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 const calcTempAmplitudeNew = function (t1, t2) {
@@ -32,12 +32,11 @@ const calcTempAmplitudeNew = function (t1, t2) {
 };
 const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew);
-*/
 
 /**
  * Debugging with the console and breakpoints
  */
-/*
+
 const measureKelvin = function () {
   const measurement = {
     type: 'temp',
@@ -73,12 +72,11 @@ const calcTempAmplitudeBug = function (t1, t2) {
 };
 const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeBug);
-*/
 
 /**
  * Coding Challenge #1
  */
-/*
+
 const tempArray1 = [17, 21, 23];
 const tempArray2 = [12, 5, -5, -5, 0, 4];
 
@@ -100,4 +98,3 @@ const printForecast = function (arr) {
 
 printForecast(tempArray1);
 printForecast(tempArray2);
-*/

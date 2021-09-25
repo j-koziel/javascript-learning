@@ -2,7 +2,7 @@
 /**
  * Default Parameters
  */
-/*
+
 const bookings = [];
 
 const createBooking = function (
@@ -29,11 +29,11 @@ createBooking('LH123', 2);
 createBooking('LH123', 5);
 
 createBooking('LH123', undefined, 1000);
-*/
+
 /**
  * How Passing Arguments works: Value vs. Reference
  */
-/*
+
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedtman',
@@ -60,11 +60,11 @@ const newPassport = function (person) {
 };
 newPassport(jonas);
 checkIn(flight, jonas);
-*/
+
 /**
  * Functions Acepting Callback Functions
  */
-/*
+
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -92,12 +92,11 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
-*/
 
 /**
  * Functions Returning functions
  */
-/*
+
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -113,12 +112,11 @@ greet('Hello')('Jonas');
 
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 greetArr('Hi')('Jonas');
-*/
 
 /**
  * The call and apply Methods
  */
-/*
+
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
@@ -212,7 +210,6 @@ const addTax = function (rate) {
 console.log(addTax(0.1)(200));
 console.log(addTax(0.12)(2));
 console.log(addTax(0.5)(5));
-*/
 
 /**
  * Coding Challenge #1
@@ -246,7 +243,7 @@ string like "Poll results are 13, 2, 4, 1".
 5. Bonus: Use the 'displayResults' method to display the 2 arrays in the test 
 data. Use both the 'array' and the 'string' option. Do not put the arrays in the poll 
 object! So what should the this keyword look like in this situation
-
+*/
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -287,12 +284,11 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 
 // [5, 2, 3]
 //
-*/
 
 /**
  * Immediately Invoked Function Expressions (IIFE)
  */
-/*
+
 const runOnce = function () {
   console.log('This will never run again');
 };
@@ -314,12 +310,11 @@ runOnce();
 }
 // console.log(isPrivate);
 console.log(notPrivate);
-*/
 
 /**
  * Closures
  */
-/*
+
 const secureBooking = function () {
   let passengerCount = 0;
 
@@ -336,12 +331,11 @@ booker();
 booker();
 
 console.dir(booker);
-*/
 
 /**
  * More Closure examples
  */
-/*
+
 let f;
 
 // Closure #1
@@ -386,7 +380,6 @@ setTimeout(function () {
 
 const perGroup = 1000;
 boardPassengers(100, 3);
-*/
 
 /**
  * Coding Challenge #2

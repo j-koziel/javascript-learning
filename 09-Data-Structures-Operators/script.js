@@ -73,7 +73,7 @@ name conversion working �
 § This challenge is difficult on purpose, so start watching the solution in case 
 you're stuck. Then pause and continue!
 */
-/*
+
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
@@ -102,11 +102,11 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(`${output.padEnd(20)}${'✔'.repeat(i + 1)}`);
   }
 });
-*/
+
 /**
  * Working With Strings - Part 3
  */
-/*
+
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtman'.split(' '));
 
@@ -152,11 +152,11 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
-*/
+
 /**
  * Working With Strings - Part 2
  */
-/*
+
 const airline = 'TAP Air Portugal';
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
@@ -213,11 +213,11 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some food and a pocket Knife');
 checkBaggage('Snacks and camera');
 checkBaggage('Got some snacks and a gun for protection');
-*/
+
 /**
  * Working With Strings - Part 1
  */
-/*
+
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 console.log(plane[0]);
@@ -254,11 +254,11 @@ checkMiddleSeat('3E');
 console.log(new String('jonas'));
 console.log(typeof new String('jonas'));
 console.log(typeof new String('jonas').slice(1));
-*/
+
 /**
  * Coding Challenge #3
  */
-/*
+
 //  Let's continue with our football betting app! This time, we have a map called
 //  'gameEvents' (see below) with a log of the events that happened during the
 //  game. The values are the events themselves, and the keys are the minutes in which
@@ -289,9 +289,6 @@ const gameEvents = new Map([
   [92, '� Yellow card'],
 ]);
 
-
-
-
 // 1
 console.log(gameEvents.values());
 const events = [...new Set(gameEvents.values())];
@@ -314,11 +311,11 @@ for (const [gameMinute, gameEvent] of gameEvents) {
     console.log(`[SECOND HALF] ${gameMinute}: ${gameEvent}`);
   }
 }
-*/
+
 /**
  * Maps: Iteration
  */
-/*
+
 const question = new Map([
   ['question', 'what is the best programming language in the world?'],
   [1, 'C'],
@@ -353,11 +350,11 @@ console.log([...question]);
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
-*/
+
 /**
  * Maps: Fundementals
  */
-/*
+
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -388,11 +385,11 @@ console.log(rest);
 console.log(rest.size);
 
 console.log(rest.get(arr));
-*/
+
 /**
  * Sets
  */
-/*
+
 const orderSet = new Set([
   'Pasta',
   'Pizza',
@@ -425,7 +422,7 @@ console.log(
 );
 
 console.log(new Set('jonasschmedtman').size);
-*/
+
 /**
  * Coding Challege #2
  */
@@ -451,7 +448,7 @@ game, it will look like this:
  Lewandowski: 2
 }
 GOOD LUCK �
-
+*/
 // Test Data
 const game = {
   team1: 'Bayern Munich',
@@ -544,9 +541,9 @@ game.scorers = {
 
 console.log(game.scorers);
 // console.log((sum += game.odds.team1 + game.odds.x + game.odds.team2));
-*/
+
 // Looping Objects: Object Keys, Values, and Entries
-/*
+
 // Property NAMES
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -569,7 +566,7 @@ const entries = Object.entries(openingHours);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
 }
-/*
+
 // Optional Chaining (.?)
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
@@ -595,7 +592,7 @@ const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
 console.log(users[0]?.name ?? 'User array empty');
 
 // Looping Arrays: The for-of loop
-/*
+
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (const item of menu) console.log(item);
@@ -605,7 +602,7 @@ for (const [i, el] of menu.entries()) {
 }
 
 // console.log(...menu.entries());
-*/
+
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
 
@@ -664,7 +661,7 @@ const game = {
     team2: 6.5,
   },
 };
-
+*/
 // 1. ✔
 const [players1, players2] = game.players;
 console.log(players1, players2);
@@ -710,12 +707,11 @@ console.log();
 // Solution
 team1 < team2 && console.log('Team 1 is more likely to win');
 team2 < team1 && console.log('Team 2 is more likely to win');
-*/
 
 /**
  * The Nullish Coalescing Operator (??)
  */
-/*
+
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
 console.log(guests);
@@ -723,11 +719,11 @@ console.log(guests);
 // Nullish: null and undefined (NOT 0 or '')
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
-*/
+
 /**
  * Short Circuiting (&& and ||) / The Nullish Coalescing Operator (??)
  */
-/*
+
 console.log('---- OR ----');
 // Use ANY data type, return ANY data type, short-cicuiting (short circuit evaluation)
 console.log(3 || 'Jonas');
@@ -759,7 +755,7 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 /**
  * Rest Pattern and Parameters
  */
-/*
+
 // 1) Destructuring
 // SPREAD, because on RIGHT side of = operator
 const arr = [1, 2, ...[3, 4]];
@@ -796,7 +792,7 @@ restaurant.orderPizza('mushrooms');
 /**
  * The Spread Operator (...)
  */
-/*
+
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -843,7 +839,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
-/*
+
 // Destructuring Objects
 // Use curly braces to destructure objects
 
@@ -880,12 +876,11 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
-*/
 
 /**
  * Destructuring Arrays
  */
-/*
+
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -922,4 +917,3 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
-*/
