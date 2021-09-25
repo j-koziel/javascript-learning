@@ -1,6 +1,6 @@
 # javascript-learning
 
-This is my learning journey in javaScript
+This is my learning journey in JavaScript
 
 I am using Udemy to learn JavaScript, and each folder is a different section of Jonas Schmedtman's course that you can find in the link below.
 
