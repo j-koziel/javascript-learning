@@ -242,7 +242,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /**
  * Simple Array methods
  */
-/*
+
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 // SLICE
@@ -275,11 +275,11 @@ console.log([...arr, ...arr2]);
 
 // JOIN
 console.log(letters.join(' - '));
-*/
+
 /**
  * Looping Arrays: forEach
  */
-/*
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // for (const movement of movements) {
@@ -304,12 +304,11 @@ movements.forEach(function (mov, i, arr) {
 // 1: function(450)
 // 2: function(400)
 // ...
-*/
 
 /**
  * forEach with Maps and Sets
  */
-/*
+
 // Map
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -327,13 +326,11 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${_}: ${value}`);
 });
-*/
 
 /**
  * Coding Challenge #1
  */
 
-//  Coding Challenge #1
 //  Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners
 //  about their dog's age, and stored the data into an array (one array for each). For
 //  now, they are just interested in knowing whether a dog is an adult or a puppy.
@@ -380,12 +377,11 @@ const checkDogs = function (arr1, arr2) {
 
 checkDogs(dogsJuliaCorrect, dogsKate);
 checkDogs(dogsJulia1, dogsKate1);
-*/
+
 
 /**
  * The map method
  */
-/*
 
 const euroToUsd = 1.1;
 
@@ -412,12 +408,11 @@ const movementsDescriptions = movements.map(
 );
 
 console.log(movementsDescriptions);
-*/
 
 /**
  * The filter method
  */
-/*
+
 const deposits = movements.filter(function (mov) {
   return mov > 0;
 });
@@ -430,11 +425,11 @@ console.log(depositsFor);
 
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
-*/
+
 /**
  * The reduce method
  */
-/*
+
 console.log(movements);
 
 // accumulator -> SNOWBALL
@@ -456,7 +451,6 @@ const max = movements.reduce(
   movements[0]
 );
 console.log(max);
-*/
 
 /**
  * Coding Challenge #2
@@ -477,7 +471,7 @@ Test data:
 § Data 1: [5, 2, 4, 1, 15, 8, 3]
 § Data 2: [16, 6, 10, 5, 6, 1, 4]
 */
-/*
+
 const calcAverageHumanAge = function (dogAges) {
   const humanAges = dogAges.map(function (age) {
     if (age <= 2) return 2 * age;
@@ -499,12 +493,11 @@ const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 console.log(avg1, avg2);
-*/
 
 /**
  * Chaining methods
  */
-/*
+
 const euroToUsd = 1.1;
 console.log(movements);
 
@@ -518,12 +511,11 @@ const totalDepositsUSD = movements
   // .map(mov => mov * euroToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
-*/
 
 /**
  * Coding Challenge #3
  */
-/*
+
 const calcAverageHumanAge = dogAges =>
   dogAges
     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
@@ -534,12 +526,11 @@ const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 console.log(avg1, avg2);
-*/
 
 /**
  * The find method
  */
-/*
+
 const firstWithdrawal = movements.find(mov => mov < 0);
 console.log(movements);
 console.log(firstWithdrawal);
@@ -548,12 +539,11 @@ console.log(accounts);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
-*/
 
 /**
  * some and every
  */
-/*
+
 // some
 console.log(movements);
 // EQUALITY
@@ -574,12 +564,11 @@ const deposit = mov => mov > 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
-*/
 
 /**
  * flat and flatMap
  */
-/*
+
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arr.flat());
 
@@ -598,12 +587,11 @@ const overallBalance2 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overallBalance);
-*/
 
 /**
  * Sorting Arrays
  */
-/*
+
 // Strings
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
@@ -629,12 +617,11 @@ movements.sort((a, b) => {
 });
 movements.sort((a, b) => b - a);
 console.log(movements);
-*/
 
 /**
  * More ways of creating and filling arrays
  */
-/*
+
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
@@ -657,13 +644,12 @@ const z = Array.from({ length: 7 }, (_, i) => i + 1);
 console.log(z);
 
 // One hundred dicce rolls challenge
-/*
+
 const oneHundredDiceRolls = Array.from({ length: 100 }, () =>
   Math.floor(Math.random() * (7 - 1) + 1)
 );
 console.log(oneHundredDiceRolls);
 console.log(oneHundredDiceRolls);
-
 
 labelBalance.addEventListener('click', function () {
   const movementsUI = Array.from(
@@ -674,12 +660,11 @@ labelBalance.addEventListener('click', function () {
 
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 });
-*/
 
 /**
  * Array Methods Practice
  */
-/*
+
 // 1
 const bankDepositSum = accounts
   .flatMap(acc => acc.movements)
@@ -735,7 +720,6 @@ const convertTitleCase = function (title) {
 console.log(convertTitleCase('this is a nice title'));
 console.log(convertTitleCase('this is a LONG title but not too long'));
 console.log(convertTitleCase('and here is another title with an EXAMPLE'));
-*/
 
 /**
  * Coding Challenge #4
