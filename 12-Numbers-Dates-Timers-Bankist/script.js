@@ -604,6 +604,7 @@ if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 
 // setInterval();
 setInterval(function () {
+  // Challenge
   const now = new Date();
   const nowHour = now.getHours();
   const nowMinute = now.getMinutes();
