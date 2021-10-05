@@ -39,17 +39,15 @@ document.addEventListener('keydown', function (e) {
  */
 
 // Selecting Elements
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
-console.log(allSections);
 
 document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
 
 console.log(document.getElementsByClassName('btn'));
 
@@ -137,17 +135,6 @@ const section1 = document.querySelector('#section--1');
 
 btnScrollTo.addEventListener('click', e => {
   const s1cords = section1.getBoundingClientRect();
-  console.log(s1cords);
-
-  console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
 
   // Scrolling
   // window.scrollTo(
@@ -163,3 +150,7 @@ btnScrollTo.addEventListener('click', e => {
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+/**
+ * Types of Events and Event Handlers
+ */
