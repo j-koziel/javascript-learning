@@ -30,6 +30,53 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// Button Scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', e => {
+  const s1cords = section1.getBoundingClientRect();
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1cords.left + window.pageXOffset,
+  //   s1cords.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1cords.left + window.pageXOffset,
+  //   top: s1cords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+/**
+ * Page Navigation
+ */
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Mathcing strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /** Lectures **/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,31 +174,6 @@ logo.classList.contains('c');
 // logo.className = 'jonas'
 
 /**
- * Implementing Smooth Scrolling
- */
-
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
-btnScrollTo.addEventListener('click', e => {
-  const s1cords = section1.getBoundingClientRect();
-
-  // Scrolling
-  // window.scrollTo(
-  //   s1cords.left + window.pageXOffset,
-  //   s1cords.top + window.pageYOffset
-  // );
-
-  // window.scrollTo({
-  //   left: s1cords.left + window.pageXOffset,
-  //   top: s1cords.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
-
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
-
-/**
  * Types of Events and Event Handlers
  */
 
@@ -173,7 +195,7 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 /**
  * Event Propagation in Practice
  */
-
+/*
 // rgb(255, 255, 255)
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
@@ -199,3 +221,10 @@ document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   console.log('NAV', e.target, e.currentTarget);
 });
+*/
+
+/**
+ * Event Delagation: Implementing Page Navigation
+ */
+
+// ^^^^^^^^^^^^^^^^ GO TO TOP OF FILE TO SEE CHANGES ^^^^^^^^^^^^^^^^
