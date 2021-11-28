@@ -77,6 +77,17 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+// Tabbed component
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+  clicked.classList.add('operations__tab--active');
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /** Lectures **/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
