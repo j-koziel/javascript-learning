@@ -131,7 +131,35 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // });
 
 // Sticky navigation: Intersection Observer API
+// const obsCallBack = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
 
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 0.1],
+// };
+// const observer = new IntersectionObserver(obsCallBack, obsOptions);
+// observer.observe(section1);
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /** Lectures **/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +173,7 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // console.log(document.head);
 // console.log(document.body);
 
-const header = document.querySelector('.header');
+// const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 
 document.getElementById('section--1');
