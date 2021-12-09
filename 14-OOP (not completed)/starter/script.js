@@ -98,11 +98,13 @@ const Car = function (make, speed) {
 };
 
 Car.prototype.accelarate = function () {
-  console.log(this.speed * 10);
+  this.speed *= 10;
+  console.log(this.speed);
 };
 
 Car.prototype.brake = function () {
-  console.log(this.speed - 5);
+  this.speed -= 5;
+  console.log(this.speed);
 };
 
 const bmw = new Car('BMW', 120);
