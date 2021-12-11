@@ -98,7 +98,7 @@ const Car = function (make, speed) {
 };
 
 Car.prototype.accelarate = function () {
-  this.speed *= 10;
+  this.speed += 10;
   console.log(this.speed);
 };
 
