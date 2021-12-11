@@ -1,6 +1,8 @@
 'use strict';
 
-// Constructor Functions and the new Operator
+/**
+ * Constructor Functions and the new Operator
+ */
 const Person = function (firstName, birthYear) {
   // Instance properties
   this.firstName = firstName;
@@ -26,7 +28,9 @@ console.log(matilda, jack);
 
 console.log(jonas instanceof Person);
 
-// Prototypes
+/**
+ * Prototypes
+ */
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
@@ -50,7 +54,9 @@ console.log(jonas.spieces, matilda.spieces);
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
 
-// Prototypal inheritance on built-in Objects
+/**
+ * Prototypal inheritance on built-in Objects
+ */
 
 console.log(jonas.__proto__);
 // Object.prototype (top of the prototype chain)
@@ -115,3 +121,47 @@ mercedes.accelarate();
 
 bmw.brake();
 mercedes.brake();
+
+/**
+ * ES6 Classes
+ */
+
+// class expression
+// const PersonCl = class {};
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  } // No commas in between methods
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+jessica.calcAge();
+
+console.log(jessica.__proto__ === PersonCl.prototype);
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+
+jessica.greet();
+
+// 1. Classes are NOT hoisted
+// 2. Class are first-class citizens
+// 3. Classes are executed in strict mode
+
+/**
+ * Setters and Getters
+ */
