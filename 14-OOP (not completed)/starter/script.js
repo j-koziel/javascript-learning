@@ -3,17 +3,17 @@
 /**
  * Constructor Functions and the new Operator
  */
-const Person = function (firstName, birthYear) {
-  // Instance properties
-  this.firstName = firstName;
-  this.birthYear = birthYear;
+// const Person = function (firstName, birthYear) {
+//   // Instance properties
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
 
-  // Never do this
-  // this.calcAge = function () {
-  //   console.log(2037 - this.birthYear);
-  // };
-};
-
+//   // Never do this
+//   // this.calcAge = function () {
+//   //   console.log(2037 - this.birthYear);
+//   // };
+// };
+/*
 const jonas = new Person('Jonas', 1991);
 console.log(jonas);
 
@@ -38,6 +38,7 @@ Person.hey();
 /**
  * Prototypes
  */
+/*
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
@@ -64,7 +65,7 @@ console.log(jonas.hasOwnProperty('species'));
 /**
  * Prototypal inheritance on built-in Objects
  */
-
+/*
 console.log(jonas.__proto__);
 // Object.prototype (top of the prototype chain)
 console.log(jonas.__proto__.__proto__);
@@ -86,7 +87,7 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
-
+*/
 /*
 // Coding Challenge #1
 
@@ -289,3 +290,43 @@ class Car {
 const ford = new Car('Ford', 120);
 ford.speedUS = 50;
 console.log(ford);
+
+/**
+ * Inheritance between "Classes": Constructor Functions
+ */
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// Linking Prototypes
+Student.prototype = Object.create(Person.prototype);
+console.log(Student.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+console.log(mike instanceof Student);
+console.log(mike instanceof Person);
+console.log(mike instanceof Object);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
