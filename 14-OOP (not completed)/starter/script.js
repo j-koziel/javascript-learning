@@ -583,3 +583,19 @@ Account.helper();
 
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
+
+/**
+ * Coding challenge #4
+ */
+/*
+Your tasks:
+1. Re-create Challenge #3, but this time using ES6 classes: create an 'EVCl'
+child class of the 'CarCl' class
+2. Make the 'charge' property private
+3. Implement the ability to chain the 'accelerate' and 'chargeBattery'
+methods of this class, and also update the 'brake' method in the 'CarCl'
+class. Then experiment with chaining!
+Test data:
+§
+Data car 1: 'Rivian' going at 120 km/h, with a charge of 23%
+*/
