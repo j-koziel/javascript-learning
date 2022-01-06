@@ -403,20 +403,6 @@ image path. Set the network speed to “Fast 3G” in the dev tools Network tab,
 otherwise images load too fast
 */
 
-// function createImage(path) {
-//   return (
-//     new Promise(res => {
-//       const img = (document.createElement('img').src = path);
-
-//       img.addEventListener('load', function (e) {
-//         img.classList.add('images');
-//         res(img);
-//       });
-//     }),
-//     rej => {}
-//   );
-// }
-
 const imgContainer = document.querySelector('.images');
 
 let img;
@@ -436,23 +422,6 @@ function createImage(path) {
     });
   });
 }
-
-// createImage('./img/img-1.jpg')
-//   .then(res => {
-//     wait(2).then(res => {
-//       res.style.display = 'none';
-//     });
-
-//     createImage('./img/img-2.jpg').then(res => {
-//       wait(2);
-//       res.style.display = 'none';
-//       createImage('./img/img-3.jpg').then(res => {
-//         wait(2);
-//         res.style.display = 'none';
-//       });
-//     });
-//   })
-//   .catch(e => console.error(e));
 
 createImage('./img/img-1.jpg')
   .then(res => {
