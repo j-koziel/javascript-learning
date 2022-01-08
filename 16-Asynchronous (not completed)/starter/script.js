@@ -525,7 +525,7 @@ const get3Countries = async function (c1, c2, c3) {
 
 get3Countries('poland', 'canada', 'tanzania');
 */
-
+/*
 // Promise.race
 (async function () {
   const res = await Promise.race([
@@ -574,3 +574,134 @@ Promise.any([
 ])
   .then(res => console.log(res))
   .catch(err => console.error(err));
+*/
+/**
+ * Coding Challenge #3
+ */
+/*
+PART 1 
+1. Write an async function 'loadNPause' that recreates Challenge #2, this time 
+using async/await (only the part where the promise is consumed, reuse the 
+'createImage' function from before) 
+2. Compare the two versions, think about the big differences, and see which one 
+you like more 
+3. Don't forget to test the error handler, and to set the network speed to “Fast 3G” 
+in the dev tools Network tab 
+ 
+PART 2 
+1. Create an async function 'loadAll' that receives an array of image paths 
+'imgArr' 
+2. Use .map to loop over the array, to load all the images with the 
+'createImage' function (call the resulting array 'imgs') 
+3. Check out the 'imgs' array in the console! Is it like you expected? 
+4. Use a promise combinator function to actually get the images from the array 😉 
+5. Add the 'parallel' class to all the images (it has some CSS styles) 
+Test data Part 2: ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-
+3.jpg']. To test, turn off the 'loadNPause' function
+*/
+
+// .then().catch
+const imgContainer = document.querySelector('.images');
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const img = document.createElement('img');
+    img.src = imgPath;
+    img.addEventListener('load', function () {
+      imgContainer.append(img);
+      resolve(img);
+    });
+    img.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
+
+// createImage('./img/img-1.jpg')
+//   .then(res => {
+//     return wait(2);
+//   })
+//   .then(() => {
+//     img.style.display = 'none';
+//     createImage('./img/img-2.jpg')
+//       .then(res => {
+//         return wait(2);
+//       })
+//       .then(() => {
+//         img.style.display = 'none';
+//         createImage('./img/img-3.jpg')
+//           .then(res => {
+//             return wait(2);
+//           })
+//           .then(() => {
+//             img.style.display = 'none';
+//             console.log('Done!');
+//           });
+//       });
+//   })
+//   .catch(e => console.error(e));
+
+// async => await [PART 1]
+
+// const loadNPause = async function () {
+//   try {
+//     // First image
+//     const img1 = await createImage('./img/img-1.jpg');
+//     const timer1 = await wait(2);
+//     img1.style.display = 'none';
+
+//     // Second image
+//     const img2 = await createImage('./img/img-2.jpg');
+//     const timer2 = await wait(2);
+//     img2.style.display = 'none';
+
+//     // Third image
+//     const img3 = await createImage('./img/img-3.jpg');
+//     const timer3 = await wait(2);
+//     img3.style.display = 'none';
+//   } catch (err) {
+//     console.error(err);
+//   }
+//   // finally
+//   console.log('Done!');
+// };
+
+// loadNPause();
+
+// [PART 2]
+
+// const loadAll = async function (imgArr) {
+//   try {
+//     const imgs = imgArr.map(async img => await createImage(img));
+//     const imgsEl = await Promise.all(imgs);
+//     imgsEl.forEach(img => img.classList.add('parallel'));
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+
+// const loadAll = async function (imgArr) {
+//   try {
+//     const imgs = imgArr.map(async img => await createImage(img));
+//     const imgsEl = await Promise.all(imgs);
+//     console.log(imgsEl);
+//     imgsEl.forEach(img => img.classList.add('parallel'));
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+
+// loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+
+// Jonas' solution
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async img => await createImage(img));
+    const imgsEl = await Promise.all(imgs);
+    console.log(imgsEl);
+    imgsEl.forEach(img => img.classList.add('parallel'));
+  } catch (err) {
+    console.error(err);
+  }
+};
+loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
