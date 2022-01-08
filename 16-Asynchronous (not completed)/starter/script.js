@@ -268,7 +268,7 @@ const getData = function (url, errMsg) {
 
 const whereAmI = function (lat, lng) {
   getData(
-    `https://geocode.xyz/${lat},${lng}?geoit=json&auth=173508422337301313845x94307`,
+    `https://geocode.xyz/${lat},${lng}?geoit=json`,
     'Something went wrong'
   )
     .then(data => {
@@ -402,7 +402,7 @@ Test data: Images in the img folder. Test the error handler by passing a wrong
 image path. Set the network speed to “Fast 3G” in the dev tools Network tab,
 otherwise images load too fast
 */
-
+/*
 const imgContainer = document.querySelector('.images');
 
 let img;
@@ -446,3 +446,33 @@ createImage('./img/img-1.jpg')
       });
   })
   .catch(e => console.error(e));
+*/
+
+/**
+ * Consuming Promises with Async/Await
+ */
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  // Geolocation
+  const pos = await getPosition();
+  console.dir(pos);
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+
+  // Country data
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${dataGeo.country}`
+  );
+  const data = await res.json();
+  renderCountry(data[0]);
+};
+whereAmI();
+console.log('FIRST');
