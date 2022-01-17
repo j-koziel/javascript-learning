@@ -23,6 +23,6 @@ export const loadRecipe = async function (id) {
     };
   } catch (err) {
     // Temp error handling
-    console.error(err);
+    throw err;
   }
 };
